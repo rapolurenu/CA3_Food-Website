@@ -1,13 +1,13 @@
 body {
-  font-family: Arial, sans-serif;
+  font-family:  Helvetica, sans-serif;
   margin: 0;
   padding: 0;
 }
 
 header {
-  background-color: #333;
+  background-color: #746633;
   color: #fff;
-  padding: 20px;
+  padding: 21px;
   text-align: center;
 }
 
@@ -18,7 +18,7 @@ header h1 {
 input[type="text"] {
   padding: 10px;
   width: 60%;
-  margin-top: 10px;
+  margin-top: 11px;
 }
 
 main {
@@ -36,12 +36,12 @@ section {
 #mealImage {
   max-width: 100%;
   height: auto;
-  border-radius: 5px;
+  border-radius: 6px;
   max-height: 200px; 
   margin-bottom: 10px; 
 }
 
-.modal {
+.In_ {
   display: none;
   position: fixed;
   z-index: 1;
@@ -50,10 +50,10 @@ section {
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color: rgb(0,0,0);
+  background-color: #746633;
 }
 
-.modal-content {
+.In_content {
   background-color: #fefefe;
   margin: 15% auto;
   padding: 20px;
@@ -61,15 +61,15 @@ section {
   width: 80%;
 }
 
-.close {
+.cl {
   color: #aaa;
   float: right;
   font-size: 28px;
   font-weight: bold;
 }
 
-.close:hover,
-.close:focus {
+.cl:hover,
+.cl:focus {
   color: black;
   text-decoration: none;
   cursor: pointer;
@@ -104,7 +104,7 @@ section {
     max-height: 150px; 
   }
 
-  .modal-content {
+  .In_content {
     width: 90%;
     margin: 25% auto;
   }
