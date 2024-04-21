@@ -5,10 +5,10 @@ document.addEventListener('DOMContentLoaded', function () {
   const searchInput = document.getElementById('searchInput');
   const searchResults = document.getElementById('searchResults');
   const searchResultsContainer = document.getElementById('searchResultsContainer');
-  const modal = document.getElementById('modal');
-  const closeBtn = document.getElementsByClassName('close')[0];
+  const In_ = document.getElementById('In_');
+  const clBtn = document.getElementsByClassName('cl')[0];
 
-  // Fetch random meal
+  
   fetch('https://www.themealdb.com/api/json/v1/1/random.php')
       .then(response => response.json())
       .then(data => {
@@ -16,15 +16,15 @@ document.addEventListener('DOMContentLoaded', function () {
           mealImage.src = randomMeal.strMealThumb;
           mealName.textContent = randomMeal.strMeal;
 
-          // Display ingredients in modal
+          
           randomMealContainer.addEventListener('click', () => {
               const ingredients = getIngredients(randomMeal);
-              populateModal(ingredients);
-              modal.style.display = 'block';
+              populateIn_(ingredients);
+              In_.style.display = 'block';
           });
       });
 
-  // Search for meal category
+  
   searchInput.addEventListener('keypress', function (e) {
       if (e.key === 'Enter') {
           const category = searchInput.value;
@@ -42,14 +42,14 @@ document.addEventListener('DOMContentLoaded', function () {
       }
   });
 
-  // Close modal
-  closeBtn.addEventListener('click', () => {
-      modal.style.display = 'none';
+  
+  clBtn.addEventListener('click', () => {
+      In_.style.display = 'none';
   });
 
   window.addEventListener('click', (e) => {
-      if (e.target === modal) {
-          modal.style.display = 'none';
+      if (e.target === In_) {
+          In_.style.display = 'none';
       }
   });
 
@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function () {
       return ingredients;
   }
 
-  function populateModal(ingredients) {
+  function populateIn_(ingredients) {
       const ingredientList = document.getElementById('ingredientList');
       ingredientList.innerHTML = '';
       ingredients.forEach(ingredient => {
@@ -92,8 +92,8 @@ document.addEventListener('DOMContentLoaded', function () {
                   .then(response => response.json())
                   .then(data => {
                       const ingredients = getIngredients(data.meals[0]);
-                      populateModal(ingredients);
-                      modal.style.display = 'block';
+                      populateIn_(ingredients);
+                      In_.style.display = 'block';
                   });
           });
           searchResultsContainer.appendChild(mealDiv);
